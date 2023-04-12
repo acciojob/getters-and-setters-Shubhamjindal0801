@@ -8,7 +8,10 @@ class Person {
 		return this.name
 	}
 	set age(){
-		return this.age
+		if (typeof age !== 'number' || age < 0) {
+	    throw new Error('Age must be a positive number');
+	    }
+	    this.age = age;
 	}
 }
 
